@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
     if (currentDay === 6 || currentDay === 0) {
         res.send("Yaaay it's the weekend!");
     } else {
-        res.send("Boooo! I've to work!")
+        res.sendFile(__dirname+"/index.html");
     }
 })
 
