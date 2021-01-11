@@ -1,0 +1,22 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "ToDoList App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Motasem94/ToDoList.git"
+  },
+  "author": "Motasem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Motasem94/ToDoList/issues"
+  },
+  "homepage": "https://github.com/Motasem94/ToDoList#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
