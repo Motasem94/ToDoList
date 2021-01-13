@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+
+var items = [];
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
@@ -13,11 +15,13 @@ app.get("/", (req, res) => {
         month:'long'
     };
     var day = today.toLocaleDateString("en-US",options);
-    res.render("list",{kindOfDay: day});
+    res.render("list",{kindOfDay: day, newListItems: items});
 })
 
 app.post("/",(req,res)=>{
-    console.log(req.body.newItem);
+    item = req.body.newItem;
+    items.push(item);
+    res.redirect("/");
 })
 
 

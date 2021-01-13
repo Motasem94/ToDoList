@@ -12,9 +12,9 @@
         <button type="submit" name="button">Add</button>
     </form>
     <ul>
-        <li>Study</li>
-        <li>Study more</li>
-        <li>STUDY MOOORE!</li>
+        <% for(var i=0; i<newListItems.length; i++){ %>
+            <li> <%= newListItems[i] %></li>
+        <% } %>
     </ul>
 </body>
 </html>
