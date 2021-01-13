@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
@@ -13,6 +14,10 @@ app.get("/", (req, res) => {
     };
     var day = today.toLocaleDateString("en-US",options);
     res.render("list",{kindOfDay: day});
+})
+
+app.post("/",(req,res)=>{
+    console.log(req.body.newItem);
 })
 
 
