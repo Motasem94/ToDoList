@@ -12,6 +12,9 @@
   },
   "author": "Motasem",
   "license": "ISC",
+  "engines": {
+    "node": "15.3.0"
+  },
   "bugs": {
     "url": "https://github.com/Motasem94/ToDoList/issues"
   },
