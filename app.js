@@ -2,6 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 const app = express();
 
@@ -10,8 +14,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const DB_URL =
-  "mongodb+srv://motasem:Motasem123@cluster0.egyeq.mongodb.net/ToDoList?retryWrites=true&w=majority";
+const DB_URL = process.env.DB_URL;
 
 mongoose
   .connect(DB_URL, {
@@ -59,7 +62,7 @@ app.get("/", function (req, res) {
         if (err) {
           console.log(err);
         } else {
-          console.log("Successfully savevd default items to DB.");
+          console.log("Successfully saved default items to DB.");
         }
       });
       res.redirect("/");
